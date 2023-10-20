@@ -1,0 +1,29 @@
+&CONTROL
+    calculation = "scf"
+    pseudo_dir  = "/home/medea/pseudopot"
+    tprnfor     = .TRUE.
+    tstress     = .TRUE.
+
+/
+
+
+&SYSTEM
+
+    degauss     =  1.00000e-03
+ ibrav = 0, nat = 18, ntyp = 3 ,  nosym       = .TRUE.
+    ecutrho     =  3.50000e+02
+    ecutwfc     =  6.00000e+01
+    occupations = "smearing"
+    smearing    = "methfessel-paxton"
+/
+
+&ELECTRONS
+    conv_thr         =  1e-12
+    electron_maxstep = 200
+    mixing_beta      =  2.50000e-01
+    startingpot      = "atomic"
+    startingwfc      = "atomic+random"
+/
+
+K_POINTS {automatic}
+ 5  5   7  0 0 0

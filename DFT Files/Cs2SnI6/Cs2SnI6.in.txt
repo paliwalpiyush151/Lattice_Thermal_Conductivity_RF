@@ -1,0 +1,51 @@
+CONTROL
+    calculation = "scf"
+    pseudo_dir  = "/home/medea/pseudopot"
+    tprnfor     = .TRUE.
+    tstress     = .TRUE.
+
+/
+
+&SYSTEM
+
+    degauss     =  1.00000e-03
+    ecutrho     =  3.50000e+02
+    ecutwfc     =  6.00000e+01
+    ibrav       = 0
+    nat         = 9
+    ntyp        = 3
+    occupations = "smearing"
+    smearing    = "methfessel-paxton"
+/
+
+&ELECTRONS
+    conv_thr         =  1.00000e-06
+    electron_maxstep = 200
+    mixing_beta      =  7.00000e-01
+    startingpot      = "atomic"
+    startingwfc      = "atomic+random"
+/
+
+K_POINTS {automatic}
+ 5  5  7  0 0 0
+
+CELL_PARAMETERS {bohr}
+-11.400245   0.000000  11.400245
+  0.000000  11.400245  11.400245
+-11.400245  11.400245   0.000000
+
+ATOMIC_SPECIES
+Cs    132.90545  Cs.pbe-mt_bw.UPF
+Sn    118.71000  Sn.pbe-dn-rrkjus_psl.1.0.0.UPF
+I     126.90447  I.pbe-mt_bw.UPF
+
+ATOMIC_POSITIONS {crystal}
+Cs      0.250000   0.250000   0.250000
+Cs      0.750000   0.750000   0.750000
+Sn      0.000000   0.000000   0.000000
+I       0.241243   0.758757   0.758757
+I       0.758757   0.241243   0.758757
+I       0.241243   0.758757   0.241243
+I       0.758757   0.241243   0.241243
+I       0.758757   0.758757   0.241243
+I       0.241243   0.241243   0.758757
